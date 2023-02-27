@@ -1,0 +1,27 @@
+# Service for Ubuntu/Unix systems
+# This file should be located at '/etc/systemd/system/'
+
+[Unit]
+Description=uWSGI instance to serve Telegram Chatbot
+After=network.target
+Conflicts=getty@tty1.service
+
+[Service]
+Type=simple
+# Should be updated to the system user
+User=mhsw
+#Group=<alternate group>
+# Should be updated to the app path/env
+WorkingDirectory=/home/mhsw/systems/opus-bot
+Environment="PATH=/home/mhsw/systems/opus-bot/env/bin"
+ExecStart=/env/bin/python /home/mhsw/systems/opus-bot/run.py
+StandardInput=tty-force
+Restart=always
+# Restart service after 10 seconds if service crashes
+RestartSec=10
+# Output to syslog
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
