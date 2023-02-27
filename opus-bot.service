@@ -14,7 +14,7 @@ User=mhsw
 # Should be updated to the app path/env
 WorkingDirectory=/home/mhsw/systems/opus-bot
 Environment="PATH=/home/mhsw/systems/opus-bot/env/bin"
-ExecStart=/env/bin/python /home/mhsw/systems/opus-bot/run.py
+ExecStart=/home/mhsw/systems/opus-bot/env/bin/python /home/mhsw/systems/opus-bot/run.py
 StandardInput=tty-force
 Restart=always
 # Restart service after 10 seconds if service crashes
