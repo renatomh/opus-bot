@@ -52,7 +52,7 @@ def get_s3_bucket_keys():
 # Function to get prayers and data from DynamoDN table
 def get_dynamodb_table_prayers():
     # Initializing DynamoDB instance and getting table
-    dynamodb = session.resource('dynamodb')
+    dynamodb = session.resource('dynamodb', region_name=os.getenv('AWS_REGION'))
     table = dynamodb.Table('opus-bot')
     scan = table.scan()
     # Getting prayers formatted as dict
