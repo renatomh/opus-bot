@@ -1,5 +1,5 @@
 APScheduler==3.10.0
-beautifulsoup4-4.11.2
+beautifulsoup4==4.11.2
 boto3==1.26.78
 emoji==2.2.0
 google-cloud-texttospeech==2.14.1
